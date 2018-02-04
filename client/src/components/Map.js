@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import L from 'leaflet'
 import {connect} from "react-redux";
 import _ from 'lodash';
+import Noty from 'noty';
+
+require('noty/lib/noty.css');
+require('noty/lib/themes/mint.css');
+
 
 class Map extends React.Component {
     componentDidMount() {
@@ -17,7 +22,7 @@ class Map extends React.Component {
             attributionControl: false,
         });
 
-        this.marker = L.marker([0, 0])
+        this.marker = L.marker([0, 0]);
         map.on('click', this.onMapClick);
         map.fitWorld();
     }
@@ -27,7 +32,7 @@ class Map extends React.Component {
         this.map = null;
     }
 
-    componentWillReceiveProps (nextProps) {
+    componentWillReceiveProps(nextProps) {
         if (!_.isNil(nextProps.lon)) {
             this.marker.setLatLng([nextProps.lat, nextProps.lon]);
             this.map.setView([nextProps.lat, nextProps.lon]);
@@ -44,7 +49,7 @@ class Map extends React.Component {
             right: 0,
             top: 0,
             bottom: 0,
-        }
+        };
         return (
             <div className='map' style={style}></div>
         );

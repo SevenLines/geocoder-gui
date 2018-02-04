@@ -1,8 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {geocodeQuery} from "../actions";
-import _ from 'lodash';
-
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -18,21 +16,23 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     }
 };
 
-let QueryInput = ({query, onInput}) => {
-    let input;
-    let styles = {
-        position: "absolute",
-        width: '50%',
-        left: '50%',
-        top: '1em',
-        transform: "translate(-50%, 0)",
-        zIndex: 1000
-    };
+class QueryInput extends React.Component {
+    render () {
+        let input;
+        let styles = {
+            position: "absolute",
+            width: '50%',
+            left: '50%',
+            top: '1em',
+            transform: "translate(-50%, 0)",
+            zIndex: 1000
+        };
 
-    return (
-        <input style={styles} type="text" value={query} onChange={onInput}/>
-    )
-};
+        return (
+            <input style={styles} type="text" value={this.props.query} onChange={this.props.onInput}/>
+        )
+    }
+}
 
 
 QueryInput = connect(

@@ -1,11 +1,5 @@
-var knex = require('knex')({
-    client: 'pg',
-    connection: {
-        host: 'localhost',
-        user: 'm',
-        password: '12345',
-        database: 'gis_data'
-    }
-});
+let localSettings = require('../local_settings');
+
+var knex = require('knex')(localSettings.db);
 
 module.exports = require('bookshelf')(knex);
