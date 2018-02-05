@@ -32,7 +32,8 @@ module.exports = {
             path: '/home/visualizer/imposm_geocoder_gui',
             'post-deploy': 'cd client ' +
             '&& yarn install ' +
-            '&& yarn build cd ../server ' +
+            '&& yarn build ' +
+            '&& cd ../server ' +
             '&& yarn install ' +
             '&& pm2 reload ecosystem.config.js --env dev',
             env: {
