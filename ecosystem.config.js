@@ -31,9 +31,9 @@ module.exports = {
             repo: 'https://github.com/SevenLines/geocoder-gui.git',
             path: '/home/visualizer/imposm_geocoder_gui',
             'post-deploy': 'cd client ' +
-            '&& npm install ' +
-            '&& npm build cd ../server ' +
-            '&& npm install ' +
+            '&& yarn install ' +
+            '&& yarn build cd ../server ' +
+            '&& yarn install ' +
             '&& pm2 reload ecosystem.config.js --env dev',
             env: {
                 NODE_ENV: 'dev'
