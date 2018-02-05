@@ -1,0 +1,11 @@
+{
+  "db": {
+    "client": "pg",
+    "connection": {
+      "host": "localhost",
+      "user": "user",
+      "password": "password",
+      "database": "gis_data"
+    }
+  }
+}
