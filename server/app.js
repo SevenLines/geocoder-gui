@@ -1,9 +1,10 @@
 var express = require('express');
 var logger = require('morgan');
+var path = require('path');
 var app = express();
 
 app.use(logger('dev'));
-app.use(express.static('../client/build'));
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 // routes
 app.use('/geocode', require('./routes/geocoder'));
