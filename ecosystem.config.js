@@ -29,7 +29,7 @@ module.exports = {
             host: 'beta.geodva.com',
             ref: 'origin/master',
             repo: 'git@github.com:SevenLines/geocoder-gui.git',
-            path: '/home/visualizer/imposm_geocoder_gui',
+            path: '/home/visualizer/imposm_geocoder_gui/server',
             'post-deploy': 'cd client ' +
             '&& yarn install ' +
             '&& yarn build cd ../server ' +
