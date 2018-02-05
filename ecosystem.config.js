@@ -26,7 +26,7 @@ module.exports = {
     deploy: {
         beta: {
             user: 'visualizer',
-            host: 'beta.geodva.com',
+            host: ['beta.geodva.com'],
             ref: 'origin/master',
             repo: 'https://github.com/SevenLines/geocoder-gui.git',
             path: '/home/visualizer/imposm_geocoder_gui',
